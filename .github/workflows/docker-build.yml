@@ -21,9 +21,11 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
-      # Step 3: ENV variable for commit id shot version
-      - name: Image version tags
-        run: echo "$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+      # Step 2: Get the short 7-character commit ID
+      - name: Get short Git commit ID
+        id: vars
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
       # Step 3: Build the Dockerfile and push it to your registry
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
@@ -32,4 +34,4 @@ jobs:
           file: ./Dockerfile
           push: true
           # Replace 'my-app' with your preferred Docker Hub repository name
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/notes-app:${{ $GITHUB_ENV }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/notes-app:${{ steps.vars.outputs.sha_short }}
