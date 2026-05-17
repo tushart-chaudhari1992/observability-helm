@@ -1,4 +1,4 @@
-appNmae: notes-app
+appName: notes-app
 appNamespace: application
 replicaCount: 2
 imageName: devopsuser1992/notes-app 
