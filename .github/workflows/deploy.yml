@@ -40,5 +40,5 @@ jobs:
       - name: Deploy to Kubernetes via Helm
         run: |
           helm upgrade --install notes-app ./charts/notes-app \
-            -f ./charts/my-python-app/values.yaml \
+            -f ./charts/notes-app/values.yaml \
             --timeout 15ms
