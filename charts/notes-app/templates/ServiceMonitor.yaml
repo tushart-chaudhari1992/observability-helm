@@ -11,7 +11,7 @@ spec:
       app: {{ .Values.appName }}
   namespaceSelector:
     matchNames:
-      - {{ .Values.appNameSpace }}
+      - {{ .Values.appNameSpace | quote }}
   endpoints:
     - port: metrics
       path: /metrics
