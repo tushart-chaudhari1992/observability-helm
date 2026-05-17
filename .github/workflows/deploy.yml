@@ -34,7 +34,7 @@ jobs:
         run: |
           sed -i 's/IMAGEVERSION/"${{ steps.vars.outputs.sha_short }}"/g' ./charts/notes-app/values.yaml
           echo "=== Verification: Modified values.yaml ==="
-          cat ./charts/my-python-app/values.yaml
+          cat ./charts/notes-app/values.yaml
 
       # Step 6: Deploy by explicitly passing the modified values.yaml file
       - name: Deploy to Kubernetes via Helm
