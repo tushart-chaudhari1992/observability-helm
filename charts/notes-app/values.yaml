@@ -1,0 +1,12 @@
+appNmae: notes-app
+appNamespace: application
+replicaCount: 2
+imageName: devopsuser1992/notes-app 
+imageVersion: IMAGEVERSION
+containerPort: 8000
+serviceType: NodePort
+servicePort : 8000
+containerPort: 8000
+nodePort: 8000
+appMonitor: metrics
+monitorPort: 9090
