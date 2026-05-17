@@ -31,8 +31,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./notes-app
-          file: ./notes-app/cd ..
-          Dockerfile
+          file: ./notes-app/Dockerfile
           push: true
           # Replace 'my-app' with your preferred Docker Hub repository name
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/notes-app:${{ steps.vars.outputs.sha_short }}
