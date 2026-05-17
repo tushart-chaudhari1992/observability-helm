@@ -7,6 +7,6 @@ containerPort: 8000
 serviceType: NodePort
 servicePort : 8000
 containerPort: 8000
-nodePort: 8000
+nodePort: 30001
 appMonitor: metrics
 monitorPort: 9090
