@@ -39,7 +39,6 @@ jobs:
       # Step 6: Deploy by explicitly passing the modified values.yaml file
       - name: Deploy to Kubernetes via Helm
         run: |
-          helm upgrade --install notes-app ./charts/notes-app \
+          helm install notes-app ./charts/notes-app \
             -f ./charts/notes-app/values.yaml \
-            --namespace application \
             --timeout 15ms
