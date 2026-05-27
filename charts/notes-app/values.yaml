@@ -1,5 +1,5 @@
 appName: notes-app
-appNamespace: application
+appNameSpace: application
 replicaCount: 2
 imageName: devopsuser1992/notes-app 
 imageVersion: IMAGEVERSION
