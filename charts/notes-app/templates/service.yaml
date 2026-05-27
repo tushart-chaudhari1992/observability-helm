@@ -16,6 +16,3 @@ spec:
     port: {{ .Values.servicePort }}         # The port exposed inside the cluster
     targetPort: {{ .Values.containerPort }} # The port mapped down to the containerPort above
     nodePort: {{ .Values.nodePort }}
-  - name: {{ .Values.appMonitor }}
-    protocol: TCP
-    port: {{ .Values.monitorPort }}     
