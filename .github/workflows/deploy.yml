@@ -41,4 +41,5 @@ jobs:
         run: |
           helm upgrade --install notes-app ./charts/notes-app \
             -f ./charts/notes-app/values.yaml \
+            --namepsace application \
             --timeout 15ms
